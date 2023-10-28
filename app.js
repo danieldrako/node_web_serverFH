@@ -5,8 +5,12 @@ const port = 8080;
 // mservir contenido estático
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  res.send('Home page');
+app.get('/generic', (req, res) => {
+  res.sendFile(__dirname +'/public/generic.html');
+})
+
+app.get('/elements', (req, res) => {
+  res.sendFile(__dirname +'/public/elements.html');
 })
 
 app.get('*', (req,res) => {
